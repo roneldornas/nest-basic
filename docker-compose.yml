@@ -1,0 +1,17 @@
+version: "3.9"
+
+volumes:
+  postgres-data:
+    driver: local
+
+services:
+  postgres:
+    image: postgres:15.3-alpine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=nestfundamentos
+      - POSTGRES_PASSWORD=sandbox
+      - POSTGRES_USER=sandbox
+    ports:
+      - "5432:5432"
